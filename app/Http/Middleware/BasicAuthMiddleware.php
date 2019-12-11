@@ -14,7 +14,7 @@
         * @return mixed
         */
       public function handle($request, Closure $next) {
-          if($request->header('autorized') == 1) {
+          if($request->header('Authorization') != 1) {
               $headers = array('WWW-Authenticate' => 'Basic');
               return response('Unauthorized', 401, $headers);
           }

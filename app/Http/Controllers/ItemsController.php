@@ -21,7 +21,7 @@ class ItemsController extends Controller
     {
         try {
             $items = Items::orderBy('id', 'DESC');
-            $itemPaginate = $items->paginate(3);
+            $itemPaginate = $items->paginate(10);
             $listItems = $itemPaginate->getCollection()->transform(function($item){
                 $transform = [
                     'id'=>$item->id,
